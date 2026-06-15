@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Yash Maurya – Resume</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Inter', 'Segoe UI', sans-serif;
+      background: #f0f4ff;
+      color: #1e293b;
+      font-size: 13.5px;
+      line-height: 1.5;
+    }
+
+    /* ── Auto-print on load ── */
+    .print-bar {
+      background: linear-gradient(135deg, #6366f1, #8b5cf6);
+      color: #fff;
+      text-align: center;
+      padding: 12px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+    }
+    .print-bar button {
+      background: #fff;
+      color: #6366f1;
+      border: none;
+      padding: 7px 20px;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 0.82rem;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .print-bar button:hover { background: #e0e7ff; }
+
+    .resume-wrapper {
+      max-width: 860px;
+      margin: 24px auto;
+      background: #fff;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(99,102,241,0.15);
+    }
+
+    /* ── Header ── */
+    .resume-header {
+      background: linear-gradient(135deg, #312e81 0%, #4f46e5 50%, #0891b2 100%);
+      color: #fff;
+      padding: 36px 40px 28px;
+      display: flex;
+      align-items: center;
+      gap: 28px;
+    }
+    .resume-photo {
+      width: 90px; height: 90px;
+      border-radius: 50%;
+      border: 3px solid rgba(255,255,255,0.5);
+      object-fit: cover;
+      object-position: center top;
+      flex-shrink: 0;
+      background: rgba(255,255,255,0.15);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 2rem; font-weight: 900;
+      overflow: hidden;
+    }
+    .resume-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center top; border-radius: 50%; }
+    .header-info h1 { font-size: 2rem; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 4px; }
+    .header-info .tagline { font-size: 1rem; font-weight: 500; opacity: 0.85; margin-bottom: 14px; }
+    .header-contacts { display: flex; flex-wrap: wrap; gap: 14px; }
+    .contact-chip {
+      display: flex; align-items: center; gap: 5px;
+      font-size: 0.78rem; font-weight: 600;
+      background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.25);
+      padding: 4px 12px; border-radius: 999px;
+      color: #fff; text-decoration: none;
+    }
+    .contact-chip:hover { background: rgba(255,255,255,0.25); }
+
+    /* ── Layout ── */
+    .resume-body {
+      display: grid;
+      grid-template-columns: 280px 1fr;
+    }
+
+    /* ── Sidebar ── */
+    .resume-sidebar {
+      background: #f8f9ff;
+      padding: 28px 24px;
+      border-right: 1px solid #e0e7ff;
+    }
+
+    /* ── Main ── */
+    .resume-main { padding: 28px 32px; }
+
+    /* ── Section ── */
+    .rs { margin-bottom: 22px; }
+    .rs-title {
+      font-size: 0.7rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: #6366f1;
+      border-bottom: 2px solid #e0e7ff;
+      padding-bottom: 5px;
+      margin-bottom: 12px;
+    }
+
+    /* ── Skills ── */
+    .skill-item { margin-bottom: 10px; }
+    .skill-name { font-size: 0.78rem; font-weight: 600; color: #1e293b; margin-bottom: 4px; display: flex; justify-content: space-between; }
+    .skill-pct { color: #6366f1; font-weight: 700; }
+    .skill-track { height: 5px; background: #e0e7ff; border-radius: 999px; overflow: hidden; }
+    .skill-fill { height: 100%; background: linear-gradient(90deg, #6366f1, #8b5cf6); border-radius: 999px; }
+
+    /* ── Sidebar list ── */
+    .sb-list { list-style: none; }
+    .sb-list li {
+      font-size: 0.8rem;
+      color: #475569;
+      padding: 5px 0;
+      border-bottom: 1px solid #e8eaf6;
+      display: flex; align-items: center; gap: 8px;
+    }
+    .sb-list li:last-child { border: none; }
+    .sb-icon { font-size: 0.9rem; }
+
+    /* ── Cert list ── */
+    .cert-item { margin-bottom: 10px; }
+    .cert-name { font-size: 0.78rem; font-weight: 600; color: #1e293b; }
+    .cert-issuer { font-size: 0.72rem; color: #6366f1; font-weight: 500; }
+    .cert-date-badge { font-size: 0.68rem; color: #64748b; }
+
+    /* ── Experience ── */
+    .exp-item { margin-bottom: 18px; padding-bottom: 18px; border-bottom: 1px solid #e8eaf6; }
+    .exp-item:last-child { border: none; padding: 0; margin: 0; }
+    .exp-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 8px; margin-bottom: 3px; flex-wrap: wrap; }
+    .exp-role { font-size: 0.92rem; font-weight: 700; color: #1e1b4b; }
+    .exp-company { font-size: 0.82rem; font-weight: 600; color: #6366f1; margin-bottom: 6px; }
+    .exp-duration { font-size: 0.72rem; font-weight: 700; color: #fff; background: linear-gradient(135deg, #6366f1, #8b5cf6); padding: 2px 10px; border-radius: 999px; white-space: nowrap; }
+    .exp-desc { font-size: 0.78rem; color: #475569; margin-bottom: 7px; line-height: 1.6; }
+    .exp-list { list-style: none; }
+    .exp-list li { font-size: 0.77rem; color: #475569; padding: 2px 0 2px 14px; position: relative; line-height: 1.5; }
+    .exp-list li::before { content: '▸'; position: absolute; left: 0; color: #6366f1; font-size: 0.65rem; top: 4px; }
+    .exp-tags { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 7px; }
+    .exp-tag { font-size: 0.68rem; font-weight: 600; padding: 2px 8px; border-radius: 999px; background: #e0e7ff; color: #4f46e5; }
+    .exp-link { font-size: 0.72rem; color: #0891b2; font-weight: 600; text-decoration: none; }
+    .exp-link:hover { text-decoration: underline; }
+
+    /* ── Projects ── */
+    .proj-item { margin-bottom: 14px; padding-bottom: 14px; border-bottom: 1px solid #e8eaf6; }
+    .proj-item:last-child { border: none; padding: 0; margin: 0; }
+    .proj-header { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 6px; margin-bottom: 4px; }
+    .proj-name { font-size: 0.88rem; font-weight: 700; color: #1e1b4b; }
+    .proj-stack { font-size: 0.7rem; color: #6366f1; font-weight: 600; }
+    .proj-desc { font-size: 0.77rem; color: #475569; line-height: 1.5; margin-bottom: 5px; }
+    .proj-link { font-size: 0.72rem; color: #0891b2; font-weight: 600; text-decoration: none; }
+    .proj-link:hover { text-decoration: underline; }
+
+    /* ── Education ── */
+    .edu-item { }
+    .edu-degree { font-size: 0.92rem; font-weight: 700; color: #1e1b4b; }
+    .edu-uni { font-size: 0.82rem; color: #6366f1; font-weight: 600; margin: 3px 0; }
+    .edu-meta-row { display: flex; gap: 16px; flex-wrap: wrap; }
+    .edu-meta-item { font-size: 0.76rem; color: #64748b; font-weight: 500; }
+
+    /* ── Sidebar profile summary ── */
+    .profile-summary { font-size: 0.78rem; color: #475569; line-height: 1.65; margin-bottom: 4px; }
+
+    /* ── PRINT ── */
+    @media print {
+      @page { margin: 10mm 10mm; size: A4; }
+      body { background: #fff !important; }
+      .print-bar { display: none !important; }
+      .resume-wrapper { box-shadow: none !important; border-radius: 0; margin: 0; max-width: 100%; }
+      .resume-header { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+      .exp-duration { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+      .skill-fill { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+      a { color: inherit !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="print-bar">
+    💡 To save as PDF: Click "Download PDF" → Choose "Save as PDF" in the print dialog
+    <button onclick="window.print()">⬇️ Download PDF</button>
+    <button onclick="window.close()" style="background:rgba(255,255,255,0.2);color:#fff;border:1px solid rgba(255,255,255,0.4);">✕ Close</button>
+  </div>
+
+  <div class="resume-wrapper">
+
+    <!-- HEADER -->
+    <div class="resume-header">
+      <div class="resume-photo">
+        <img src="https://beeimg.com/images/r89137945814.jpg" alt="Yash Maurya" onerror="this.parentElement.innerHTML='YM'" />
+      </div>
+      <div class="header-info">
+        <h1>Yash Maurya</h1>
+        <p class="tagline">Frontend Web Developer &amp; MERN Stack Trainee | BCA Final Year</p>
+        <div class="header-contacts">
+          <a href="mailto:yash223101@gmail.com" class="contact-chip">📧 yash223101@gmail.com</a>
+          <a href="tel:+918960793990" class="contact-chip">📱 +91 8960793990</a>
+          <span class="contact-chip">📍Mayur Vihar , New Delhi, India</span>
+          <a href="https://linkedin.com/in/yash-maurya-501740292" class="contact-chip">💼 LinkedIn</a>
+          <a href="https://github.com/yashmaurya22" class="contact-chip">⌥ GitHub</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- BODY -->
+    <div class="resume-body">
+
+      <!-- SIDEBAR -->
+      <div class="resume-sidebar">
+
+        <!-- Profile Summary -->
+        <div class="rs">
+          <div class="rs-title">Profile</div>
+          <p class="profile-summary">
+            Final-year BCA student passionate about building responsive, user-friendly web applications.
+            Experienced in HTML, CSS, JavaScript, PHP, ReactJS, and MERN Stack development.
+            Focused on creating impactful digital experiences and continuously learning modern web technologies.
+          </p>
+        </div>
+
+        <!-- Technical Skills -->
+        <div class="rs">
+          <div class="rs-title">Technical Skills</div>
+
+          <div class="skill-item"><div class="skill-name"><span>HTML5</span><span class="skill-pct">90%</span></div><div class="skill-track"><div class="skill-fill" style="width:90%"></div></div></div>
+          <div class="skill-item"><div class="skill-name"><span>CSS3</span><span class="skill-pct">85%</span></div><div class="skill-track"><div class="skill-fill" style="width:85%"></div></div></div>
+          <div class="skill-item"><div class="skill-name"><span>JavaScript</span><span class="skill-pct">80%</span></div><div class="skill-track"><div class="skill-fill" style="width:80%"></div></div></div>
+          <div class="skill-item"><div class="skill-name"><span>ReactJS</span><span class="skill-pct">75%</span></div><div class="skill-track"><div class="skill-fill" style="width:75%"></div></div></div>
+          <div class="skill-item"><div class="skill-name"><span>Bootstrap</span><span class="skill-pct">85%</span></div><div class="skill-track"><div class="skill-fill" style="width:85%"></div></div></div>
+          <div class="skill-item"><div class="skill-name"><span>PHP</span><span class="skill-pct">70%</span></div><div class="skill-track"><div class="skill-fill" style="width:70%"></div></div></div>
+          <div class="skill-item"><div class="skill-name"><span>Node.js</span><span class="skill-pct">65%</span></div><div class="skill-track"><div class="skill-fill" style="width:65%"></div></div></div>
+          <div class="skill-item"><div class="skill-name"><span>Express.js</span><span class="skill-pct">65%</span></div><div class="skill-track"><div class="skill-fill" style="width:65%"></div></div></div>
+          <div class="skill-item"><div class="skill-name"><span>MongoDB</span><span class="skill-pct">65%</span></div><div class="skill-track"><div class="skill-fill" style="width:65%"></div></div></div>
+          <div class="skill-item"><div class="skill-name"><span>Python</span><span class="skill-pct">55%</span></div><div class="skill-track"><div class="skill-fill" style="width:55%;background:linear-gradient(90deg,#3b82f6,#06b6d4)"></div></div></div>
+          <div class="skill-item"><div class="skill-name"><span>Git &amp; GitHub</span><span class="skill-pct">80%</span></div><div class="skill-track"><div class="skill-fill" style="width:80%"></div></div></div>
+          <div class="skill-item"><div class="skill-name"><span>WordPress</span><span class="skill-pct">75%</span></div><div class="skill-track"><div class="skill-fill" style="width:75%"></div></div></div>
+        </div>
+
+        <!-- Soft Skills -->
+        <div class="rs">
+          <div class="rs-title">Soft Skills</div>
+          <ul class="sb-list">
+            <li><span class="sb-icon">🤝</span> Team Collaboration</li>
+            <li><span class="sb-icon">🧠</span> Problem Solving</li>
+            <li><span class="sb-icon">📢</span> Communication</li>
+            <li><span class="sb-icon">🔄</span> Adaptability</li>
+            <li><span class="sb-icon">⏱️</span> Time Management</li>
+            <li><span class="sb-icon">🔍</span> Attention to Detail</li>
+          </ul>
+        </div>
+
+        <!-- Education -->
+        <div class="rs">
+          <div class="rs-title">Education</div>
+          <div class="edu-item">
+            <div class="edu-degree">Bachelor of Computer Applications (BCA)</div>
+            <div class="edu-uni">Jagannath Community College</div>
+            <div class="edu-meta-row">
+              <span class="edu-meta-item">📅 2023 – Present</span>
+              <span class="edu-meta-item">📊 CGPA: 7.0</span>
+            </div>
+            <div class="edu-meta-row" style="margin-top:3px;">
+              <span class="edu-meta-item">📍 Mayur Vihar , New Delhi, India</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Languages -->
+        <div class="rs">
+          <div class="rs-title">Languages</div>
+          <ul class="sb-list">
+            <li><span class="sb-icon">🇮🇳</span> Hindi – Native</li>
+            <li><span class="sb-icon">🇬🇧</span> English – Professional</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- MAIN CONTENT -->
+      <div class="resume-main">
+
+        <!-- EXPERIENCE -->
+        <div class="rs">
+          <div class="rs-title">Work Experience</div>
+
+          <!-- Tapovan -->
+          <div class="exp-item">
+            <div class="exp-header">
+              <div class="exp-role">Frontend Web Developer Intern</div>
+              <span class="exp-duration">Oct 2025 – Dec 2025</span>
+            </div>
+            <div class="exp-company">Tapovan Impex Pvt. Ltd. · New Delhi, India</div>
+            <p class="exp-desc">Worked on real-world business websites and client requirements, contributing to development and maintenance of responsive web applications.</p>
+            <ul class="exp-list">
+              <li>Developed and enhanced UIs using HTML, CSS, JavaScript, PHP, and ReactJS</li>
+              <li>Worked on live production websites:
+                <a href="https://tapovanimpex.com" class="exp-link">tapovanimpex.com</a> &amp;
+                <a href="https://thelstyle.in" class="exp-link">thelstyle.in</a>
+              </li>
+              <li>Improved website responsiveness and cross-device compatibility</li>
+              <li>Optimized performance and user experience through code enhancements</li>
+              <li>Collaborated with team to implement business requirements and UI improvements</li>
+            </ul>
+            <div class="exp-tags">
+              <span class="exp-tag">HTML5</span><span class="exp-tag">CSS3</span><span class="exp-tag">JavaScript</span><span class="exp-tag">PHP</span><span class="exp-tag">ReactJS</span>
+            </div>
+          </div>
+
+          <!-- Ainwik -->
+          <div class="exp-item">
+            <div class="exp-header">
+              <div class="exp-role">MERN Stack Trainee</div>
+              <span class="exp-duration">Jul 2025</span>
+            </div>
+            <div class="exp-company">Ainwik Infotech · New Delhi, India</div>
+            <p class="exp-desc">Completed intensive training in full-stack web development using MongoDB, Express.js, React, and Node.js.</p>
+            <ul class="exp-list">
+              <li>Learned MERN stack through hands-on project development</li>
+              <li>Built Skill Swap Hub – real-time collaborative skill exchange platform</li>
+              <li>Implemented chat functionality, API integration, and database connectivity</li>
+              <li>Collaborated using Git and GitHub workflows</li>
+            </ul>
+            <div class="exp-tags">
+              <span class="exp-tag">MongoDB</span><span class="exp-tag">Express.js</span><span class="exp-tag">React</span><span class="exp-tag">Node.js</span><span class="exp-tag"></span>
+            </div>
+          </div>
+
+          <!-- Vaishnav -->
+          <div class="exp-item">
+            <div class="exp-header">
+              <div class="exp-role">Frontend Web Developer Intern</div>
+              <span class="exp-duration">Jan 2025 – Feb 2025</span>
+            </div>
+            <div class="exp-company">Vaishnav Technologies · , India</div>
+            <p class="exp-desc">Gained foundational industry experience working on real-world development tasks and professional workflows.</p>
+            <ul class="exp-list">
+              <li>Developed responsive web pages using HTML, CSS, and JavaScript</li>
+              <li>Debugged frontend issues and fixed UI inconsistencies</li>
+              <li>Improved browser compatibility and performance optimization</li>
+              <li>Participated in code reviews and professional development processes</li>
+            </ul>
+            <div class="exp-tags">
+              <span class="exp-tag">HTML5</span><span class="exp-tag">CSS3</span><span class="exp-tag">JavaScript</span><span class="exp-tag">UI/UX</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- PROJECTS -->
+        <div class="rs">
+          <div class="rs-title">Projects</div>
+
+          <div class="proj-item">
+            <div class="proj-header">
+              <span class="proj-name">Skill Swap Hub</span>
+              <span class="proj-stack">MongoDB · Express.js · ReactJS · Node.js · Socket.io</span>
+            </div>
+            <p class="proj-desc">Collaborative platform for real-time skill exchange with user authentication, profile management, skill listing, and integrated chat system built during MERN training.</p>
+            <a href="https://github.com/yashmaurya22/skill-swap-hub" class="proj-link">⌥ github.com/yashmaurya22/skill-swap-hub</a>
+          </div>
+
+          <div class="proj-item">
+            <div class="proj-header">
+              <span class="proj-name">TalentHub <span style="font-size:0.68rem;background:#d1fae5;color:#059669;padding:2px 8px;border-radius:999px;margin-left:6px;font-weight:700;">In Progress</span></span>
+              <span class="proj-stack">HTML · CSS · JavaScript · Python</span>
+            </div>
+            <p class="proj-desc">Full-stack talent management platform covering frontend/backend integration, user authentication, database CRUD, and API development.</p>
+            <a href="https://github.com/yashmaurya22" class="proj-link">⌥ github.com/yashmaurya22</a>
+          </div>
+
+          <div class="proj-item">
+            <div class="proj-header">
+              <span class="proj-name">Journey – Learning Frontend</span>
+              <span class="proj-stack">HTML · CSS · JavaScript</span>
+            </div>
+            <p class="proj-desc">First real frontend project built during the early learning phase. Deployed live on Vercel as a milestone of the development journey.</p>
+            <a href="https://journey-fronted-design.vercel.app" class="proj-link">🌐 journey-fronted-design.vercel.app</a>
+          </div>
+
+          <div class="proj-item">
+            <div class="proj-header">
+              <span class="proj-name">Personal Portfolio Website</span>
+              <span class="proj-stack">HTML · CSS · JavaScript · PHP</span>
+            </div>
+            <p class="proj-desc">Premium portfolio with glassmorphism design, canvas particle animations, dark/light mode, project filtering, and PHP contact backend.</p>
+            <a href="https://github.com/yashmaurya22" class="proj-link">⌥ github.com/yashmaurya22</a>
+          </div>
+        </div>
+
+        <!-- CERTIFICATIONS -->
+        <div class="rs">
+          <div class="rs-title">Certifications &amp; Achievements</div>
+
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
+            <div class="cert-item">
+              <div class="cert-name">🏅 Deloitte – Technology Job Simulation</div>
+              <div class="cert-issuer">Deloitte Australia × Forage</div>
+              <div class="cert-date-badge">July 2025 · Technology Consulting · SDLC</div>
+            </div>
+            <div class="cert-item">
+              <div class="cert-name">🛡️ Introduction to Cybersecurity</div>
+              <div class="cert-issuer">Cisco Networking Academy</div>
+              <div class="cert-date-badge">July 2025 · Network Security · Threat Analysis</div>
+            </div>
+            <div class="cert-item">
+              <div class="cert-name">☁️ AWS Educate Cloud Learning Path</div>
+              <div class="cert-issuer">Amazon Web Services (AWS)</div>
+              <div class="cert-date-badge">May 2025 · 7 Courses · Cloud &amp; Serverless</div>
+            </div>
+            <div class="cert-item">
+              <div class="cert-name">📊 DataVerse: Data Analytics Competition</div>
+              <div class="cert-issuer">IIM Lucknow × KOED</div>
+              <div class="cert-date-badge">April 2025 · National Level · Data Analytics</div>
+            </div>
+            <div class="cert-item">
+              <div class="cert-name">📝 Naukri Campus Aptitude Test</div>
+              <div class="cert-issuer">Naukri.com</div>
+              <div class="cert-date-badge">May 2025 · Quantitative &amp; Logical Reasoning</div>
+            </div>
+          </div>
+          <p style="font-size:0.7rem;color:#6366f1;margin-top:10px;font-weight:600;">
+            🔗 Verify all certifications: linkedin.com/in/yash-maurya-501740292/details/certifications
+          </p>
+        </div>
+
+      </div><!-- /resume-main -->
+    </div><!-- /resume-body -->
+  </div><!-- /resume-wrapper -->
+
+  <script>
+    // Auto-trigger print dialog for PDF download
+    window.addEventListener('load', () => {
+      // Small delay to let styles render
+      setTimeout(() => {
+        if (window.location.search.includes('print=1')) {
+          window.print();
+        }
+      }, 500);
+    });
+  </script>
+</body>
+</html>

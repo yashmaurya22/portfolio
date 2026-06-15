@@ -1,0 +1,1060 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Yash Maurya | Frontend Web Developer & MERN Stack Developer</title>
+  <meta name="description" content="Yash Maurya - Final-year BCA student and Frontend Web Developer. Experienced in HTML, CSS, JavaScript, PHP, ReactJS, and MERN Stack. Based in New Delhi, India." />
+  <meta name="keywords" content="Frontend Developer Portfolio, MERN Stack Developer Portfolio, React Developer Portfolio, Web Developer Portfolio, Yash Maurya, New Delhi Web Developer" />
+  <meta name="author" content="Yash Maurya" />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:title" content="Yash Maurya | Frontend Web Developer & MERN Stack Developer" />
+  <meta property="og:description" content="Final-year BCA student passionate about building responsive, user-friendly web applications." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://yashmaurya.dev" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="canonical" href="https://yashmaurya.dev" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/light-mode.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💻</text></svg>" />
+  <style>
+    /* ── EXTRA PREMIUM STYLES ── */
+    .hero-photo-ring {
+      width: 210px; height: 210px;
+      border-radius: 50%;
+      padding: 4px;
+      background: linear-gradient(135deg, #6366f1, #8b5cf6, #06b6d4);
+      animation: float 6s ease-in-out infinite, ring-glow 3s ease-in-out infinite alternate;
+      box-shadow: 0 0 40px rgba(99,102,241,0.5), 0 20px 60px rgba(99,102,241,0.3);
+      flex-shrink: 0;
+      position: relative;
+    }
+    @keyframes ring-glow {
+      from { box-shadow: 0 0 30px rgba(99,102,241,0.4), 0 20px 60px rgba(99,102,241,0.2); }
+      to   { box-shadow: 0 0 60px rgba(139,92,246,0.7), 0 20px 80px rgba(99,102,241,0.5); }
+    }
+    .hero-photo-ring img {
+      width: 100%; height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+    }
+    .hero-photo-ring .online-dot {
+      position: absolute; bottom: 14px; right: 14px;
+      width: 18px; height: 18px;
+      background: #10b981;
+      border-radius: 50%;
+      border: 3px solid #0f0f1a;
+      animation: pulse-dot 2s ease-in-out infinite;
+    }
+    @keyframes pulse-dot {
+      0%,100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(16,185,129,0.5); }
+      50%      { transform: scale(1.1); box-shadow: 0 0 0 6px rgba(16,185,129,0); }
+    }
+    body.light-mode .hero-photo-ring .online-dot { border-color: #f8fafc; }
+
+    /* About photo */
+    .about-real-photo {
+      width: 290px; height: 290px;
+      border-radius: 28px;
+      padding: 4px;
+      background: linear-gradient(135deg, #6366f1, #8b5cf6);
+      box-shadow: 0 20px 60px rgba(99,102,241,0.3);
+      animation: float 6s ease-in-out infinite 1s;
+    }
+    .about-real-photo img {
+      width: 100%; height: 100%;
+      border-radius: 24px;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+    }
+
+    /* Timeline link */
+    .timeline-link {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 0.82rem; font-weight: 600;
+      color: var(--accent);
+      text-decoration: none;
+      transition: all 0.3s ease;
+      margin-top: 8px;
+    }
+    .timeline-link:hover { color: var(--primary); gap: 10px; }
+
+    /* Cert verify btn */
+    .cert-verify {
+      display: inline-flex; align-items: center; gap: 6px;
+      margin-top: 10px;
+      padding: 6px 14px;
+      border-radius: 999px;
+      background: rgba(99,102,241,0.1);
+      border: 1px solid rgba(99,102,241,0.25);
+      color: var(--primary);
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      width: fit-content;
+    }
+    .cert-verify:hover {
+      background: var(--gradient);
+      color: #fff;
+      border-color: transparent;
+      transform: translateY(-2px);
+    }
+
+    /* Skills extra */
+    .skill-category-badge.python { background: rgba(59,130,246,0.15); color: #3b82f6; }
+
+    /* Current project badge */
+    .current-badge {
+      display: inline-flex; align-items: center; gap: 5px;
+      font-size: 0.7rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.08em;
+      background: rgba(16,185,129,0.15); color: #10b981;
+      border: 1px solid rgba(16,185,129,0.3);
+      padding: 3px 10px; border-radius: 999px;
+      margin-bottom: 8px;
+      animation: pulse-badge 2s ease-in-out infinite;
+    }
+    @keyframes pulse-badge {
+      0%,100% { opacity: 1; }
+      50%      { opacity: 0.7; }
+    }
+    .current-dot { width: 6px; height: 6px; border-radius: 50%; background: #10b981; animation: pulse-dot 1.5s ease-in-out infinite; }
+
+    /* Live project links */
+    .live-project-links { display: flex; flex-wrap: wrap; gap: 8px; margin: 10px 0 14px; }
+    .live-link {
+      display: inline-flex; align-items: center; gap: 5px;
+      font-size: 0.78rem; font-weight: 600;
+      padding: 4px 12px; border-radius: 999px;
+      background: rgba(6,182,212,0.1); color: var(--accent);
+      border: 1px solid rgba(6,182,212,0.25);
+      text-decoration: none; transition: all 0.3s ease;
+    }
+    .live-link:hover { background: rgba(6,182,212,0.2); transform: translateY(-2px); }
+
+    /* Section divider */
+    .section-divider {
+      width: 60px; height: 4px;
+      background: var(--gradient);
+      border-radius: 999px;
+      margin: 12px auto 0;
+    }
+
+    /* Glow button */
+    .btn-glow {
+      position: relative;
+      overflow: hidden;
+    }
+    .btn-glow::after {
+      content: '';
+      position: absolute;
+      top: -50%; left: -60%;
+      width: 40%; height: 200%;
+      background: rgba(255,255,255,0.2);
+      transform: skewX(-20deg);
+      animation: btn-shine 3s ease-in-out infinite;
+    }
+    @keyframes btn-shine {
+      0%   { left: -60%; }
+      40%  { left: 110%; }
+      100% { left: 110%; }
+    }
+
+    /* Cert skills pills */
+    .cert-skills { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 8px; }
+    .cert-skill-pill {
+      font-size: 0.68rem; font-weight: 600;
+      padding: 2px 8px; border-radius: 999px;
+      background: rgba(99,102,241,0.08);
+      color: var(--text-muted);
+      border: 1px solid rgba(99,102,241,0.12);
+    }
+
+    /* Projects "In Progress" */
+    .in-progress-label {
+      display: inline-flex; align-items: center; gap: 5px;
+      font-size: 0.7rem; font-weight: 700;
+      background: rgba(16,185,129,0.12); color: #10b981;
+      border: 1px solid rgba(16,185,129,0.25);
+      padding: 2px 10px; border-radius: 999px; margin-bottom: 8px;
+    }
+
+    /* Trophies row */
+    .cert-icon-row { display: flex; align-items: center; gap: 10px; margin-bottom: 6px; }
+    .cert-org { font-size: 0.78rem; font-weight: 700; color: var(--text-muted); }
+
+    /* Smooth reveal for hero */
+    .hero-content > * { opacity: 0; animation: revealUp 0.7s forwards; }
+    .hero-content > *:nth-child(1) { animation-delay: 0.1s; }
+    .hero-content > *:nth-child(2) { animation-delay: 0.25s; }
+    @keyframes revealUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Python skill color */
+    .python-bar { background: linear-gradient(135deg, #3b82f6, #06b6d4) !important; }
+  </style>
+</head>
+<body>
+
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <!-- ====== NAVBAR ====== -->
+  <nav class="navbar" id="navbar" aria-label="Main navigation">
+    <div class="nav-container">
+      <a href="#home" class="nav-logo" aria-label="Yash Maurya Home">
+        <span class="logo-text">YM</span>
+      </a>
+      <ul class="nav-links" id="navLinks" role="menubar">
+        <li role="none"><a href="#home"         class="nav-link active" role="menuitem">Home</a></li>
+        <li role="none"><a href="#about"        class="nav-link" role="menuitem">About</a></li>
+        <li role="none"><a href="#skills"       class="nav-link" role="menuitem">Skills</a></li>
+        <li role="none"><a href="#experience"   class="nav-link" role="menuitem">Experience</a></li>
+        <li role="none"><a href="#projects"     class="nav-link" role="menuitem">Projects</a></li>
+        <li role="none"><a href="#certifications" class="nav-link" role="menuitem">Certs</a></li>
+        <li role="none"><a href="#contact"      class="nav-link" role="menuitem">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark/light mode">
+          <span class="theme-icon">🌙</span>
+        </button>
+        <button class="hamburger" id="hamburger" aria-label="Toggle mobile menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ====== HERO ====== -->
+  <section class="hero" id="home" aria-label="Hero section">
+    <canvas class="particles-canvas" id="particlesCanvas" aria-hidden="true"></canvas>
+    <!-- Light mode decorators -->
+    <span class="hero-blob-extra" aria-hidden="true"></span>
+    <div class="shape-decorator shape-1" aria-hidden="true"></div>
+    <div class="shape-decorator shape-2" aria-hidden="true"></div>
+    <div class="shape-decorator shape-3" aria-hidden="true"></div>
+    <!-- Floating tech badges (light mode) -->
+    <div class="tech-float-badge badge-react" aria-hidden="true">⚛️ ReactJS</div>
+    <div class="tech-float-badge badge-mern"  aria-hidden="true">🟢 MERN Stack</div>
+    <div class="tech-float-badge badge-php"   aria-hidden="true">🐘 PHP</div>
+    <div class="hero-content">
+
+      <!-- REAL PHOTO -->
+      <div class="hero-photo-ring" aria-label="Yash Maurya profile photo">
+        <img src="https://beeimg.com/images/r89137945814.jpg"
+             onerror="this.parentElement.innerHTML='<div style=\'width:100%;height:100%;border-radius:50%;background:linear-gradient(135deg,#1a1a2e,#16213e);display:flex;align-items:center;justify-content:center;font-size:3.5rem;font-weight:900;background-clip:text;color:#6366f1;\'>YM</div>'"
+             alt="Yash Maurya - Frontend Web Developer" />
+        <div class="online-dot" title="Available for work"></div>
+      </div>
+
+      <div class="location-badge">📍Mayur Vihar , New Delhi, India</div>
+
+      <h1 class="hero-name">
+        <span class="gradient-text">Yash Maurya</span>
+      </h1>
+
+      <div class="typing-wrapper" aria-live="polite">
+        <span id="typingText"></span><span class="typing-cursor">|</span>
+      </div>
+
+      <p class="hero-bio">
+        Final-year BCA student passionate about building responsive, user-friendly web applications.
+        Experienced in HTML, CSS, JavaScript, PHP, ReactJS, WordPress, and MERN Stack development.
+        Focused on creating impactful digital experiences and continuously learning modern web technologies.
+      </p>
+
+      <div class="hero-buttons">
+        <a href="resume.html" target="_blank" class="btn btn-primary btn-glow" aria-label="Download Resume">📄 Download Resume</a>
+        <a href="#contact" class="btn btn-secondary" aria-label="Contact Me">✉️ Contact Me</a>
+        <a href="#projects" class="btn btn-outline" aria-label="View Projects">🚀 View Projects</a>
+      </div>
+
+      <div class="hero-socials" aria-label="Social links">
+        <a href="https://www.linkedin.com/in/yash-maurya-501740292" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+          <span class="social-icon">in</span><span>LinkedIn</span>
+        </a>
+        <a href="https://github.com/yashmaurya22" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+          <span class="social-icon">⌥</span><span>GitHub</span>
+        </a>
+        <a href="mailto:yash223101@gmail.com" class="social-link" aria-label="Email">
+          <span class="social-icon">@</span><span>Email</span>
+        </a>
+        <a href="https://wa.me/918960793990" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+          <span class="social-icon" style="background:#25D366;">💬</span><span>WhatsApp</span>
+        </a>
+      </div>
+    </div>
+    <div class="hero-scroll-hint" aria-hidden="true">
+      <span>Scroll Down</span>
+      <div class="scroll-arrow"></div>
+    </div>
+  </section>
+
+  <!-- ====== ABOUT ====== -->
+  <section class="section about-section" id="about" aria-label="About section">
+    <div class="container">
+      <div class="section-header fade-in">
+        <span class="section-tag">Get to know me</span>
+        <h2 class="section-title">About <span class="gradient-text">Me</span></h2>
+        <div class="section-divider"></div>
+      </div>
+      <div class="about-grid">
+        <div class="about-image-col fade-in-left">
+          <div class="about-avatar-wrap">
+            <div class="about-real-photo">
+              <img src="https://beeimg.com/images/r89137945814.jpg"
+                   onerror="this.style.display='none'; this.parentElement.style.display='flex'; this.parentElement.style.alignItems='center'; this.parentElement.style.justifyContent='center'; this.parentElement.insertAdjacentHTML('beforeend','<span style=\'font-size:3rem;font-weight:900;color:#6366f1;\'>YM</span>')"
+                   alt="Yash Maurya" />
+            </div>
+            <div class="about-glow" aria-hidden="true"></div>
+          </div>
+        </div>
+        <div class="about-text-col fade-in-right">
+          <h3 class="about-heading">Hi, I'm Yash Maurya 👋</h3>
+          <p class="about-description">
+            I'm a final-year BCA student at Jagannath Community College, New Delhi, with hands-on experience
+            building real-world web applications. I've worked on live business websites during internships at
+            <strong style="color:var(--primary)">Tapovan Impex Pvt. Ltd.</strong> and
+            <strong style="color:var(--primary)">Vaishnav Technologies</strong>, and completed intensive
+            <strong style="color:var(--accent)">MERN Stack training</strong> at Ainwik Infotech.
+          </p>
+          <p class="about-description">
+            I love turning ideas into clean, fast, and beautiful web experiences. Currently building
+            <strong style="color:var(--secondary)">TalentHub</strong> — a full-stack talent management platform
+            — to deepen my full-stack skills.
+          </p>
+
+          <div class="about-badges">
+            <div class="badge-item glass"><span class="badge-icon">🎓</span><div><strong>BCA Student</strong><span>Jagannath Community College</span></div></div>
+            <div class="badge-item glass"><span class="badge-icon">📊</span><div><strong>CGPA: 7.0</strong><span>Bachelor of Computer Applications</span></div></div>
+            <div class="badge-item glass"><span class="badge-icon">💼</span><div><strong>3× Intern / Trainee</strong><span>Real-world project experience</span></div></div>
+            <div class="badge-item glass"><span class="badge-icon">🚀</span><div><strong>MERN Stack</strong><span>Ainwik Infotech Training</span></div></div>
+            <div class="badge-item glass"><span class="badge-icon">☁️</span><div><strong>AWS Certified</strong><span>Cloud Fundamentals</span></div></div>
+            <div class="badge-item glass"><span class="badge-icon">🤝</span><div><strong>Team Player</strong><span>Problem-solving & Collaboration</span></div></div>
+          </div>
+
+          <div class="about-stats">
+            <div class="stat-card glass">
+              <span class="stat-number" data-target="5">0</span><span style="color:var(--primary);font-weight:800;">+</span>
+              <span class="stat-label">Projects</span>
+            </div>
+            <div class="stat-card glass">
+              <span class="stat-number" data-target="3">0</span>
+              <span class="stat-label">Internships</span>
+            </div>
+            <div class="stat-card glass">
+              <span class="stat-number" data-target="5">0</span>
+              <span class="stat-label">Certifications</span>
+            </div>
+            <div class="stat-card glass">
+              <span class="stat-number" data-target="12">0</span><span style="color:var(--primary);font-weight:800;">+</span>
+              <span class="stat-label">Technologies</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== SKILLS ====== -->
+  <section class="section skills-section" id="skills" aria-label="Skills section">
+    <div class="container">
+      <div class="section-header fade-in">
+        <span class="section-tag">What I know</span>
+        <h2 class="section-title">My <span class="gradient-text">Skills</span></h2>
+        <div class="section-divider"></div>
+      </div>
+      <div class="skills-categories">
+
+        <!-- Frontend -->
+        <div class="skill-category fade-in-up">
+          <h3 class="category-title">🎨 Frontend</h3>
+          <div class="skills-grid">
+            <div class="skill-card glass"><div class="skill-header"><span class="skill-icon">🌐</span><span class="skill-name">HTML5</span><span class="skill-percent">90%</span></div><div class="skill-bar-wrap"><div class="skill-bar" data-width="90"></div></div></div>
+            <div class="skill-card glass"><div class="skill-header"><span class="skill-icon">🎨</span><span class="skill-name">CSS3</span><span class="skill-percent">85%</span></div><div class="skill-bar-wrap"><div class="skill-bar" data-width="85"></div></div></div>
+            <div class="skill-card glass"><div class="skill-header"><span class="skill-icon">⚡</span><span class="skill-name">JavaScript</span><span class="skill-percent">80%</span></div><div class="skill-bar-wrap"><div class="skill-bar" data-width="80"></div></div></div>
+            <div class="skill-card glass"><div class="skill-header"><span class="skill-icon">⚛️</span><span class="skill-name">ReactJS</span><span class="skill-percent">75%</span></div><div class="skill-bar-wrap"><div class="skill-bar" data-width="75"></div></div></div>
+            <div class="skill-card glass"><div class="skill-header"><span class="skill-icon">🅱️</span><span class="skill-name">Bootstrap</span><span class="skill-percent">85%</span></div><div class="skill-bar-wrap"><div class="skill-bar" data-width="85"></div></div></div>
+          </div>
+        </div>
+
+        <!-- Backend -->
+        <div class="skill-category fade-in-up">
+          <h3 class="category-title">⚙️ Backend (Basics)</h3>
+          <div class="skills-grid">
+            <div class="skill-card glass"><div class="skill-header"><span class="skill-icon">🟢</span><span class="skill-name">Node.js</span><span class="skill-percent">55%</span></div><div class="skill-bar-wrap"><div class="skill-bar" data-width="65"></div></div></div>
+            <div class="skill-card glass"><div class="skill-header"><span class="skill-icon">🚂</span><span class="skill-name">Express.js</span><span class="skill-percent">65%</span></div><div class="skill-bar-wrap"><div class="skill-bar" data-width="65"></div></div></div>
+            <div class="skill-card glass"><div class="skill-header"><span class="skill-icon">🐘</span><span class="skill-name">PHP</span><span class="skill-percent">70%</span></div><div class="skill-bar-wrap"><div class="skill-bar" data-width="70"></div></div></div>
+            <div class="skill-card glass"><div class="skill-header"><span class="skill-icon">🐍</span><span class="skill-name">Python</span><span class="skill-percent">55%</span></div><div class="skill-bar-wrap"><div class="skill-bar python-bar" data-width="55"></div></div></div>
+          </div>
+        </div>
+
+        <!-- Database -->
+        <div class="skill-category fade-in-up">
+          <h3 class="category-title">🗄️ Database</h3>
+          <div class="skills-grid">
+            <div class="skill-card glass"><div class="skill-header"><span class="skill-icon">🍃</span><span class="skill-name">MongoDB</span><span class="skill-percent">50%(Basic)</span></div><div class="skill-bar-wrap"><div class="skill-bar" data-width="65"></div></div></div>
+          </div>
+        </div>
+
+        <!-- Tools -->
+        <div class="skill-category fade-in-up">
+          <h3 class="category-title">🛠️ Tools & Others</h3>
+          <div class="skills-grid">
+            <div class="skill-card glass"><div class="skill-header"><span class="skill-icon">🔧</span><span class="skill-name">Git</span><span class="skill-percent">80%</span></div><div class="skill-bar-wrap"><div class="skill-bar" data-width="80"></div></div></div>
+            <div class="skill-card glass"><div class="skill-header"><span class="skill-icon">🐙</span><span class="skill-name">GitHub</span><span class="skill-percent">80%</span></div><div class="skill-bar-wrap"><div class="skill-bar" data-width="80"></div></div></div>
+            <div class="skill-card glass"><div class="skill-header"><span class="skill-icon">💙</span><span class="skill-name">VS Code</span><span class="skill-percent">90%</span></div><div class="skill-bar-wrap"><div class="skill-bar" data-width="90"></div></div></div>
+            <div class="skill-card glass"><div class="skill-header"><span class="skill-icon">🌐</span><span class="skill-name">WordPress</span><span class="skill-percent">75%</span></div><div class="skill-bar-wrap"><div class="skill-bar" data-width="75"></div></div></div>
+            <div class="skill-card glass"><div class="skill-header"><span class="skill-icon">☁️</span><span class="skill-name">AWS Cloud</span><span class="skill-percent">50%</span></div><div class="skill-bar-wrap"><div class="skill-bar" data-width="50"></div></div></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== EXPERIENCE ====== -->
+  <section class="section experience-section" id="experience" aria-label="Experience section">
+    <div class="container">
+      <div class="section-header fade-in">
+        <span class="section-tag">My journey</span>
+        <h2 class="section-title">Work <span class="gradient-text">Experience</span></h2>
+        <div class="section-divider"></div>
+      </div>
+
+      <div class="timeline">
+
+        <!-- Entry 1: Tapovan Impex -->
+        <div class="timeline-item fade-in-left">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content glass">
+            <div class="timeline-header">
+              <div>
+                <h3 class="timeline-role">Frontend Web Developer Intern</h3>
+                <h4 class="timeline-company">Tapovan Impex Pvt. Ltd.</h4>
+              </div>
+              <span class="timeline-duration">Oct 2025 – Dec 2025</span>
+            </div>
+            <p style="font-size:0.88rem;color:var(--text-muted);margin-bottom:12px;line-height:1.6;">
+              Worked on real-world business websites and client requirements, contributing to the development
+              and maintenance of responsive web applications.
+            </p>
+            <p style="font-size:0.82rem;font-weight:700;color:var(--text);margin-bottom:8px;">🌐 Live Projects:</p>
+            <div class="live-project-links">
+              <a href="https://www.tapovanimpex.com" target="_blank" rel="noopener noreferrer" class="live-link">🔗 tapovanimpex.com</a>
+              <a href="https://www.thelastyle.in/" target="_blank" rel="noopener noreferrer" class="live-link">🔗 thelstyle.in</a>
+            </div>
+            <ul class="timeline-responsibilities">
+              <li>Developed and enhanced user interfaces using HTML, CSS, JavaScript, PHP, and ReactJS</li>
+              <li>Improved website responsiveness and cross-device compatibility</li>
+              <li>Optimized website performance and user experience through code enhancements</li>
+              <li>Collaborated with team members to implement business requirements and UI improvements</li>
+              <li>Gained practical experience handling production-level projects, debugging and deploying updates</li>
+            </ul>
+            <div class="timeline-tags">
+              <span class="tag">HTML5</span><span class="tag">CSS3</span><span class="tag">JavaScript</span><span class="tag">PHP</span><span class="tag">ReactJS</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Entry 2: Ainwik Infotech -->
+        <div class="timeline-item fade-in-right">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content glass">
+            <div class="timeline-header">
+              <div>
+                <h3 class="timeline-role">MERN Stack Trainee</h3>
+                <h4 class="timeline-company">Ainwik Infotech</h4>
+              </div>
+              <span class="timeline-duration">Jul 2025</span>
+            </div>
+            <p style="font-size:0.88rem;color:var(--text-muted);margin-bottom:12px;line-height:1.6;">
+              Completed intensive training in full-stack web development using the MERN stack.
+            </p>
+            <p style="font-size:0.82rem;font-weight:700;color:var(--text);margin-bottom:8px;">📦 Project: Skill Swap Hub</p>
+            <div class="live-project-links">
+              <a href="https://github.com/yashmaurya22/skill-swap-hub" target="_blank" rel="noopener noreferrer" class="live-link">⌥ GitHub Repo</a>
+            </div>
+            <ul class="timeline-responsibilities">
+              <li>Learned MongoDB, Express.js, React, and Node.js through hands-on projects</li>
+              <li>Built Skill Swap Hub — a collaborative platform for real-time skill exchange and chat</li>
+              <li>Developed frontend interfaces using ReactJS with responsive layouts</li>
+              <li>Implemented chat functionality, API integration, and backend services</li>
+              <li>Collaborated using Git and GitHub workflows</li>
+            </ul>
+            <div class="timeline-tags">
+              <span class="tag">MongoDB</span><span class="tag">Express.js</span><span class="tag">React</span><span class="tag">Node.js</span><span class="tag">Socket.io</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Entry 3: Vaishnav Technologies -->
+        <div class="timeline-item fade-in-left">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content glass">
+            <div class="timeline-header">
+              <div>
+                <h3 class="timeline-role">Frontend Web Developer Intern</h3>
+                <h4 class="timeline-company">Vaishnav Technologies</h4>
+              </div>
+              <span class="timeline-duration">Jan 2025 – Feb 2025</span>
+            </div>
+            <p style="font-size:0.88rem;color:var(--text-muted);margin-bottom:12px;line-height:1.6;">
+              Gained foundational industry experience working on real-world development tasks.
+            </p>
+            <ul class="timeline-responsibilities">
+              <li>Developed responsive web pages using HTML, CSS, and JavaScript</li>
+              <li>Debugged real-world frontend issues and fixed UI inconsistencies</li>
+              <li>Learned industry-standard coding practices and project structure</li>
+              <li>Improved browser compatibility and performance optimization understanding</li>
+              <li>Participated in code reviews and gained exposure to professional development processes</li>
+            </ul>
+            <div class="timeline-tags">
+              <span class="tag">HTML5</span><span class="tag">CSS3</span><span class="tag">JavaScript</span><span class="tag">UI/UX</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== PROJECTS ====== -->
+  <section class="section projects-section" id="projects" aria-label="Projects section">
+    <div class="container">
+      <div class="section-header fade-in">
+        <span class="section-tag">What I've built</span>
+        <h2 class="section-title">My <span class="gradient-text">Projects</span></h2>
+        <div class="section-divider"></div>
+      </div>
+
+      <div class="project-filters fade-in" role="group" aria-label="Filter projects">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="frontend">Frontend</button>
+        <button class="filter-btn" data-filter="fullstack">Full Stack</button>
+        <button class="filter-btn" data-filter="mern">MERN</button>
+      </div>
+
+      <div class="projects-grid" id="projectsGrid">
+
+        <!-- Project 1: Skill Swap Hub -->
+        <article class="project-card glass fade-in-up" data-category="mern">
+          <div class="project-img-placeholder" style="background:linear-gradient(135deg,#6366f1,#8b5cf6);">
+            <span class="project-img-icon">🔄</span>
+          </div>
+          <div class="project-body">
+            <div class="project-category-badge mern">MERN</div>
+            <h3 class="project-title">Skill Swap Hub</h3>
+            <p class="project-desc">A collaborative platform where users can connect, exchange skills, communicate, and learn from each other in real-time.</p>
+            <ul class="project-features">
+              <li>User authentication &amp; profile management</li>
+              <li>Real-time chat via Socket.io</li>
+              <li>Skill listing &amp; exchange functionality</li>
+              <li>Dynamic content &amp; state management</li>
+            </ul>
+            <div class="project-tech-tags">
+              <span class="tech-tag">MongoDB</span><span class="tech-tag">Express.js</span><span class="tech-tag">ReactJS</span><span class="tech-tag">Node.js</span><span class="tech-tag">Socket.io</span>
+            </div>
+            <div class="project-actions">
+              <a href="https://github.com/yashmaurya22/skill-swap-hub" class="btn btn-sm btn-outline" target="_blank" rel="noopener noreferrer">⌥ GitHub</a>
+              <button class="btn btn-sm btn-secondary" onclick="openModal('modal-skillswap')">📋 Details</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 2: TalentHub -->
+        <article class="project-card glass fade-in-up" data-category="fullstack">
+          <div class="project-img-placeholder" style="background:linear-gradient(135deg,#10b981,#06b6d4);">
+            <span class="project-img-icon">🏆</span>
+          </div>
+          <div class="project-body">
+            <div class="in-progress-label"><div class="current-dot"></div> In Progress</div>
+            <div class="project-category-badge fullstack">Full Stack</div>
+            <h3 class="project-title">TalentHub</h3>
+            <p class="project-desc">A full-stack talent management platform to connect talent with opportunities. Currently building to strengthen complete web application development skills.</p>
+            <ul class="project-features">
+              <li>User authentication &amp; authorization</li>
+              <li>Database connectivity &amp; CRUD operations</li>
+              <li>API development &amp; consumption</li>
+              <li>Responsive UI/UX design</li>
+            </ul>
+            <div class="project-tech-tags">
+              <span class="tech-tag">HTML</span><span class="tech-tag">CSS</span><span class="tech-tag">JavaScript</span><span class="tech-tag">Python</span>
+            </div>
+            <div class="project-actions">
+              <a href="https://github.com/yashmaurya22" class="btn btn-sm btn-outline" target="_blank" rel="noopener noreferrer">⌥ GitHub</a>
+              <button class="btn btn-sm btn-secondary" onclick="openModal('modal-talenthub')">📋 Details</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 3: Portfolio Website -->
+        <article class="project-card glass fade-in-up" data-category="frontend">
+          <div class="project-img-placeholder" style="background:linear-gradient(135deg,#06b6d4,#6366f1);">
+            <span class="project-img-icon">💼</span>
+          </div>
+          <div class="project-body">
+            <div class="project-category-badge frontend">Frontend</div>
+            <h3 class="project-title">Portfolio Website</h3>
+            <p class="project-desc">This personal portfolio — glassmorphism design, dark/light mode, particle animations, PHP contact backend.</p>
+            <ul class="project-features">
+              <li>Glassmorphism &amp; gradient UI</li>
+              <li>Dark / Light mode toggle</li>
+              <li>Canvas particle background</li>
+              <li>PHP contact form backend</li>
+            </ul>
+            <div class="project-tech-tags">
+              <span class="tech-tag">HTML</span><span class="tech-tag">CSS</span><span class="tech-tag">JavaScript</span><span class="tech-tag">PHP</span>
+            </div>
+            <div class="project-actions">
+              <a href="https://github.com/yashmaurya22" class="btn btn-sm btn-outline" target="_blank" rel="noopener noreferrer">⌥ GitHub</a>
+              <button class="btn btn-sm btn-secondary" onclick="openModal('modal-portfolio')">📋 Details</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 4: Journey Frontend (Learning) -->
+        <article class="project-card glass fade-in-up" data-category="frontend">
+          <div class="project-img-placeholder" style="background:linear-gradient(135deg,#f59e0b,#ef4444);">
+            <span class="project-img-icon">🌱</span>
+          </div>
+          <div class="project-body">
+            <div class="project-category-badge frontend">Frontend</div>
+            <h3 class="project-title">Journey – Learning Frontend</h3>
+            <p class="project-desc">My very first frontend design project built during the early stage of my web development learning journey. Deployed on Vercel.</p>
+            <ul class="project-features">
+              <li>First real HTML/CSS project</li>
+              <li>Basic responsive layout</li>
+              <li>Learning-phase milestone</li>
+              <li>Deployed live on Vercel</li>
+            </ul>
+            <div class="project-tech-tags">
+              <span class="tech-tag">HTML</span><span class="tech-tag">CSS</span><span class="tech-tag">JavaScript</span>
+            </div>
+            <div class="project-actions">
+              <a href="https://joureny.vercel.app/" class="btn btn-sm btn-primary" target="_blank" rel="noopener noreferrer">🌐 Live Demo</a>
+              <a href="https://github.com/yashmaurya22" class="btn btn-sm btn-outline" target="_blank" rel="noopener noreferrer">⌥ GitHub</a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== PROJECT MODALS ====== -->
+  <div class="modal-overlay" id="modal-skillswap" role="dialog" aria-modal="true" aria-labelledby="modal-skillswap-title">
+    <div class="modal-box glass">
+      <button class="modal-close" onclick="closeModal('modal-skillswap')" aria-label="Close">&times;</button>
+      <div class="modal-img-placeholder" style="background:linear-gradient(135deg,#6366f1,#8b5cf6);">🔄</div>
+      <h2 id="modal-skillswap-title" class="modal-title">Skill Swap Hub</h2>
+      <div class="modal-tags">
+        <span class="tech-tag">MongoDB</span><span class="tech-tag">Express.js</span><span class="tech-tag">ReactJS</span><span class="tech-tag">Node.js</span><span class="tech-tag">Socket.io</span>
+      </div>
+      <p class="modal-desc">Skill Swap Hub is a collaborative platform built during MERN Stack training at Ainwik Infotech. Users can create profiles, list their skills, find others, and communicate through a real-time chat system.</p>
+      <h4 class="modal-features-title">Key Features:</h4>
+      <ul class="modal-features-list">
+        <li>User authentication and profile management</li>
+        <li>Skill listing and skill exchange functionality</li>
+        <li>Real-time communication via integrated chat system</li>
+        <li>Dynamic content rendering and state management</li>
+        <li>Team collaboration during project development</li>
+      </ul>
+      <div class="modal-actions">
+        <a href="https://github.com/yashmaurya22/skill-swap-hub" class="btn btn-primary" target="_blank" rel="noopener noreferrer">⌥ View on GitHub</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="modal-talenthub" role="dialog" aria-modal="true" aria-labelledby="modal-talenthub-title">
+    <div class="modal-box glass">
+      <button class="modal-close" onclick="closeModal('modal-talenthub')" aria-label="Close">&times;</button>
+      <div class="modal-img-placeholder" style="background:linear-gradient(135deg,#10b981,#06b6d4);">🏆</div>
+      <h2 id="modal-talenthub-title" class="modal-title">TalentHub</h2>
+      <div class="modal-tags">
+        <span class="tech-tag">HTML</span><span class="tech-tag">CSS</span><span class="tech-tag">JavaScript</span><span class="tech-tag">Python</span>
+      </div>
+      <p class="modal-desc">TalentHub is a full-stack talent management platform currently under development. It is Yash's current learning project to strengthen understanding of complete web application architecture, authentication, and deployment.</p>
+      <h4 class="modal-features-title">Focus Areas:</h4>
+      <ul class="modal-features-list">
+        <li>Frontend and backend integration</li>
+        <li>User authentication and authorization</li>
+        <li>Database connectivity and CRUD operations</li>
+        <li>API development and consumption</li>
+        <li>Real-world project architecture and deployment concepts</li>
+      </ul>
+      <div class="modal-actions">
+        <a href="https://github.com/yashmaurya22" class="btn btn-primary" target="_blank" rel="noopener noreferrer">⌥ GitHub Profile</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="modal-portfolio" role="dialog" aria-modal="true" aria-labelledby="modal-portfolio-title">
+    <div class="modal-box glass">
+      <button class="modal-close" onclick="closeModal('modal-portfolio')" aria-label="Close">&times;</button>
+      <div class="modal-img-placeholder" style="background:linear-gradient(135deg,#06b6d4,#6366f1);">💼</div>
+      <h2 id="modal-portfolio-title" class="modal-title">Portfolio Website</h2>
+      <div class="modal-tags">
+        <span class="tech-tag">HTML</span><span class="tech-tag">CSS</span><span class="tech-tag">JavaScript</span><span class="tech-tag">PHP</span>
+      </div>
+      <p class="modal-desc">A premium personal portfolio featuring glassmorphism design, canvas particle animations, dark/light mode, typing effects, project filtering, and PHP-powered contact form.</p>
+      <h4 class="modal-features-title">Key Features:</h4>
+      <ul class="modal-features-list">
+        <li>Glassmorphism UI with dark/light mode</li>
+        <li>Interactive canvas particle background</li>
+        <li>Typing animation for multiple roles</li>
+        <li>PHP contact form with rate limiting</li>
+        <li>WhatsApp floating button integration</li>
+      </ul>
+      <div class="modal-actions">
+        <a href="https://github.com/yashmaurya22" class="btn btn-primary" target="_blank" rel="noopener noreferrer">⌥ GitHub Profile</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ====== CERTIFICATIONS ====== -->
+  <section class="section certs-section" id="certifications" aria-label="Certifications section">
+    <div class="container">
+      <div class="section-header fade-in">
+        <span class="section-tag">Achievements</span>
+        <h2 class="section-title">Certifications &amp; <span class="gradient-text">Achievements</span></h2>
+        <p class="section-subtitle">Click "Verify" on any certificate to view on LinkedIn</p>
+        <div class="section-divider"></div>
+      </div>
+
+      <div class="certs-grid">
+
+        <!-- Cert 1: Deloitte -->
+        <div class="cert-card glass fade-in-up">
+          <div class="cert-img-placeholder" style="background:linear-gradient(135deg,#6366f1,#8b5cf6);">
+            <span class="cert-bg-icon">🏢</span>
+          </div>
+          <div class="cert-body">
+            <div class="cert-icon-row">
+              <span class="cert-trophy">🏅</span>
+              <span class="cert-org">Forage / Deloitte Australia</span>
+            </div>
+            <h3 class="cert-title">Deloitte – Technology Job Simulation</h3>
+            <p class="cert-issuer">Deloitte Australia × Forage</p>
+            <p class="cert-date">📅 July 2025</p>
+            <div class="cert-skills">
+              <span class="cert-skill-pill">Tech Consulting</span>
+              <span class="cert-skill-pill">Problem Solving</span>
+              <span class="cert-skill-pill">SDLC</span>
+              <span class="cert-skill-pill">Business Analysis</span>
+            </div>
+            <a href="https://www.linkedin.com/in/yash-maurya-501740292/details/certifications/" target="_blank" rel="noopener noreferrer" class="cert-verify">✅ Verify on LinkedIn ↗</a>
+          </div>
+        </div>
+
+        <!-- Cert 2: Cisco Cybersecurity -->
+        <div class="cert-card glass fade-in-up">
+          <div class="cert-img-placeholder" style="background:linear-gradient(135deg,#06b6d4,#6366f1);">
+            <span class="cert-bg-icon">🛡️</span>
+          </div>
+          <div class="cert-body">
+            <div class="cert-icon-row">
+              <span class="cert-trophy">🏅</span>
+              <span class="cert-org">Cisco Networking Academy</span>
+            </div>
+            <h3 class="cert-title">Introduction to Cybersecurity</h3>
+            <p class="cert-issuer">Cisco Networking Academy</p>
+            <p class="cert-date">📅 July 2025</p>
+            <div class="cert-skills">
+              <span class="cert-skill-pill">Cybersecurity</span>
+              <span class="cert-skill-pill">Network Security</span>
+              <span class="cert-skill-pill">Threat Analysis</span>
+              <span class="cert-skill-pill">Data Protection</span>
+            </div>
+            <a href="https://www.linkedin.com/in/yash-maurya-501740292/details/certifications/" target="_blank" rel="noopener noreferrer" class="cert-verify">✅ Verify on LinkedIn ↗</a>
+          </div>
+        </div>
+
+        <!-- Cert 3: AWS -->
+        <div class="cert-card glass fade-in-up">
+          <div class="cert-img-placeholder" style="background:linear-gradient(135deg,#f59e0b,#ef4444);">
+            <span class="cert-bg-icon">☁️</span>
+          </div>
+          <div class="cert-body">
+            <div class="cert-icon-row">
+              <span class="cert-trophy">🏅</span>
+              <span class="cert-org">Amazon Web Services</span>
+            </div>
+            <h3 class="cert-title">AWS Educate Cloud Learning Path</h3>
+            <p class="cert-issuer">Amazon Web Services (AWS)</p>
+            <p class="cert-date">📅 May 2025</p>
+            <div class="cert-skills">
+              <span class="cert-skill-pill">Cloud Computing</span>
+              <span class="cert-skill-pill">AWS Services</span>
+              <span class="cert-skill-pill">Serverless</span>
+              <span class="cert-skill-pill">Cloud Security</span>
+            </div>
+            <p style="font-size:0.72rem;color:var(--text-muted);margin-top:6px;">7 AWS Courses: Cloud 101, Compute, Storage, Networking, Security, Serverless, Cloud Ops</p>
+            <a href="https://www.linkedin.com/in/yash-maurya-501740292/details/certifications/" target="_blank" rel="noopener noreferrer" class="cert-verify">✅ Verify on LinkedIn ↗</a>
+          </div>
+        </div>
+
+        <!-- Cert 4: DataVerse IIM -->
+        <div class="cert-card glass fade-in-up">
+          <div class="cert-img-placeholder" style="background:linear-gradient(135deg,#10b981,#06b6d4);">
+            <span class="cert-bg-icon">📊</span>
+          </div>
+          <div class="cert-body">
+            <div class="cert-icon-row">
+              <span class="cert-trophy">🏅</span>
+              <span class="cert-org">IIM Lucknow × KOED</span>
+            </div>
+            <h3 class="cert-title">DataVerse: Data Analytics Competition</h3>
+            <p class="cert-issuer">IIM Lucknow × KOED</p>
+            <p class="cert-date">📅 April 2025</p>
+            <div class="cert-skills">
+              <span class="cert-skill-pill">Data Analytics</span>
+              <span class="cert-skill-pill">Business Insights</span>
+              <span class="cert-skill-pill">Analytical Thinking</span>
+            </div>
+            <p style="font-size:0.72rem;color:var(--text-muted);margin-top:6px;">National-level case competition — data interpretation &amp; analytical problem-solving</p>
+            <a href="https://www.linkedin.com/in/yash-maurya-501740292/details/certifications/" target="_blank" rel="noopener noreferrer" class="cert-verify">✅ Verify on LinkedIn ↗</a>
+          </div>
+        </div>
+
+        <!-- Cert 5: Naukri Aptitude -->
+        <div class="cert-card glass fade-in-up">
+          <div class="cert-img-placeholder" style="background:linear-gradient(135deg,#8b5cf6,#6366f1);">
+            <span class="cert-bg-icon">📝</span>
+          </div>
+          <div class="cert-body">
+            <div class="cert-icon-row">
+              <span class="cert-trophy">🏅</span>
+              <span class="cert-org">Naukri.com</span>
+            </div>
+            <h3 class="cert-title">Naukri Campus Aptitude Test</h3>
+            <p class="cert-issuer">Naukri.com</p>
+            <p class="cert-date">📅 May 2025</p>
+            <div class="cert-skills">
+              <span class="cert-skill-pill">Quantitative</span>
+              <span class="cert-skill-pill">Logical Reasoning</span>
+              <span class="cert-skill-pill">Problem Solving</span>
+            </div>
+            <p style="font-size:0.72rem;color:var(--text-muted);margin-top:6px;">Aptitude assessment evaluating quantitative, logical &amp; analytical abilities</p>
+            <a href="https://www.linkedin.com/in/yash-maurya-501740292/details/certifications/" target="_blank" rel="noopener noreferrer" class="cert-verify">✅ Verify on LinkedIn ↗</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== EDUCATION ====== -->
+  <section class="section education-section" id="education" aria-label="Education section">
+    <div class="container">
+      <div class="section-header fade-in">
+        <span class="section-tag">Academic background</span>
+        <h2 class="section-title">My <span class="gradient-text">Education</span></h2>
+        <div class="section-divider"></div>
+      </div>
+      <div class="education-card glass fade-in-up">
+        <div class="edu-icon-wrap">🎓</div>
+        <div class="edu-content">
+          <h3 class="edu-degree">Bachelor of Computer Applications (BCA)</h3>
+          <h4 class="edu-institution">Jagannath Community College</h4>
+          <div class="edu-meta">
+            <span class="edu-duration">📅 2023 – Present</span>
+            <span class="edu-cgpa">📊 CGPA: 7.0</span>
+            <span class="edu-location">📍 Rohini , New Delhi, India</span>
+          </div>
+          <p class="edu-desc">Pursuing Bachelor of Computer Applications with focus on software development, database management, web technologies, and computer science fundamentals.</p>
+          <div class="edu-courses">
+            <span class="tag">Data Structures</span>
+            <span class="tag">Web Development</span>
+            <span class="tag">Database Management</span>
+            <span class="tag">Software Engineering</span>
+            <span class="tag">Computer Networks</span>
+            <span class="tag">Operating Systems</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== BLOG ====== -->
+  <section class="section blog-section" id="blog" aria-label="Blog section">
+    <div class="container">
+      <div class="section-header fade-in">
+        <span class="section-tag">Thoughts &amp; Insights</span>
+        <h2 class="section-title">Blog &amp; <span class="gradient-text">Articles</span></h2>
+        <p class="section-subtitle">Coming Soon – Articles on Web Development &amp; Tech</p>
+        <div class="section-divider"></div>
+      </div>
+      <div class="blog-grid">
+        <article class="blog-card glass fade-in-up">
+          <div class="blog-img-placeholder" style="background:linear-gradient(135deg,#6366f1,#8b5cf6);">📝</div>
+          <div class="blog-body">
+            <span class="blog-tag">Web Development</span>
+            <h3 class="blog-title">Getting Started with ReactJS: A Beginner's Guide</h3>
+            <p class="blog-date">📅 Coming Soon</p>
+            <p class="blog-excerpt">An introduction to ReactJS concepts, component-based architecture, and building your first React app...</p>
+            <a href="#" class="blog-read-more">Read More →</a>
+          </div>
+        </article>
+        <article class="blog-card glass fade-in-up">
+          <div class="blog-img-placeholder" style="background:linear-gradient(135deg,#10b981,#06b6d4);">💡</div>
+          <div class="blog-body">
+            <span class="blog-tag">CSS</span>
+            <h3 class="blog-title">Modern CSS: Glassmorphism &amp; Neumorphism Design</h3>
+            <p class="blog-date">📅 Coming Soon</p>
+            <p class="blog-excerpt">Exploring modern CSS design trends including glassmorphism effects and backdrop filters...</p>
+            <a href="#" class="blog-read-more">Read More →</a>
+          </div>
+        </article>
+        <article class="blog-card glass fade-in-up">
+          <div class="blog-img-placeholder" style="background:linear-gradient(135deg,#f59e0b,#ef4444);">🚀</div>
+          <div class="blog-body">
+            <span class="blog-tag">MERN Stack</span>
+            <h3 class="blog-title">Building Full Stack Apps with the MERN Stack</h3>
+            <p class="blog-date">📅 Coming Soon</p>
+            <p class="blog-excerpt">A comprehensive guide to building production-ready full stack applications with MERN...</p>
+            <a href="#" class="blog-read-more">Read More →</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== CONTACT ====== -->
+  <section class="section contact-section" id="contact" aria-label="Contact section">
+    <div class="container">
+      <div class="section-header fade-in">
+        <span class="section-tag">Get in touch</span>
+        <h2 class="section-title">Contact <span class="gradient-text">Me</span></h2>
+        <p class="section-subtitle">Let's work together on something amazing</p>
+        <div class="section-divider"></div>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-info fade-in-left">
+          <h3 class="contact-info-title">Let's Connect</h3>
+          <p class="contact-info-desc">I'm currently open to new opportunities, internships, and freelance projects. Reach out via any channel below!</p>
+          <div class="contact-items">
+            <a href="mailto:yash223101@gmail.com" class="contact-item glass">
+              <span class="contact-item-icon">📧</span>
+              <div><strong>Email</strong><span>yash223101@gmail.com</span></div>
+            </a>
+            <a href="tel:+918960793990" class="contact-item glass">
+              <span class="contact-item-icon">📱</span>
+              <div><strong>Phone</strong><span>+91 8960793990</span></div>
+            </a>
+            <a href="https://www.linkedin.com/in/yash-maurya-501740292" target="_blank" rel="noopener noreferrer" class="contact-item glass">
+              <span class="contact-item-icon">💼</span>
+              <div><strong>LinkedIn</strong><span>yash-maurya-501740292</span></div>
+            </a>
+            <a href="https://github.com/yashmaurya22" target="_blank" rel="noopener noreferrer" class="contact-item glass">
+              <span class="contact-item-icon">⌥</span>
+              <div><strong>GitHub</strong><span>github.com/yashmaurya22</span></div>
+            </a>
+            <div class="contact-item glass">
+              <span class="contact-item-icon">📍</span>
+              <div><strong>Location</strong><span>Mayur Vihar , New Delhi, India</span></div>
+            </div>
+          </div>
+          <a href="https://wa.me/918960793990" class="btn btn-whatsapp" target="_blank" rel="noopener noreferrer">
+            💬 Chat on WhatsApp
+          </a>
+          <div class="contact-socials">
+            <a href="https://www.linkedin.com/in/yash-maurya-501740292" class="social-btn glass" target="_blank" rel="noopener noreferrer">in LinkedIn</a>
+            <a href="https://github.com/yashmaurya22" class="social-btn glass" target="_blank" rel="noopener noreferrer">⌥ GitHub</a>
+            <a href="mailto:yash223101@gmail.com" class="social-btn glass">@ Email</a>
+          </div>
+        </div>
+
+        <div class="contact-form-wrap fade-in-right">
+          <form class="contact-form glass" id="contactForm" novalidate>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="contactName">Your Name <span>*</span></label>
+                <input type="text" id="contactName" name="name" placeholder="Your Full Name" required autocomplete="name" />
+              </div>
+              <div class="form-group">
+                <label for="contactEmail">Your Email <span>*</span></label>
+                <input type="email" id="contactEmail" name="email" placeholder="you@example.com" required autocomplete="email" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="contactSubject">Subject</label>
+              <input type="text" id="contactSubject" name="subject" placeholder="Project Inquiry / Collaboration" />
+            </div>
+            <div class="form-group">
+              <label for="contactMessage">Message <span>*</span></label>
+              <textarea id="contactMessage" name="message" rows="6" placeholder="Tell me about your project or just say hello..." required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-full btn-glow" id="submitBtn">
+              <span id="submitBtnText">💬 Send via WhatsApp</span>
+              <span id="submitBtnLoading" class="hidden">⏳ Opening...</span>
+            </button>
+            <p style="font-size:0.78rem;color:var(--text-muted);text-align:center;margin-top:10px;">
+              Your message will open in WhatsApp — no email server needed ✅
+            </p>
+            <div class="form-response" id="formResponse" role="alert" aria-live="polite"></div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== FOOTER ====== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <span class="footer-logo">Yash Maurya</span>
+          <p class="footer-tagline">Frontend Developer &amp; MERN Stack Enthusiast building impactful digital experiences from New Delhi, India.</p>
+          <div class="footer-socials">
+            <a href="https://www.linkedin.com/in/yash-maurya-501740292" class="footer-social" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">in</a>
+            <a href="https://github.com/yashmaurya22" class="footer-social" target="_blank" rel="noopener noreferrer" aria-label="GitHub">⌥</a>
+            <a href="mailto:yash223101@gmail.com" class="footer-social" aria-label="Email">@</a>
+            <a href="https://wa.me/918960793990" class="footer-social" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" style="background:#25D366;border-color:#25D366;color:#fff;">💬</a>
+          </div>
+        </div>
+        <div class="footer-links">
+          <h4 class="footer-links-title">Quick Links</h4>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#certifications">Certifications</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-contact">
+          <h4 class="footer-links-title">Contact Info</h4>
+          <ul>
+            <li>📧 yash223101@gmail.com</li>
+            <li>📱 +91 8960793990</li>
+            <li>📍 Mayur Vihar , New Delhi, India</li>
+            <li><a href="https://wa.me/918960793990" target="_blank" rel="noopener noreferrer" style="color:#25D366;font-weight:600;">💬 WhatsApp: 8960793990</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 Yash Maurya. All Rights Reserved.</p>
+        <p>Made with ❤️ by Yash Maurya</p>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">▲</button>
+
+  <!-- WhatsApp Floating Button -->
+  <a href="https://wa.me/918960793990" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
+    <span>💬</span>
+    <span class="whatsapp-tooltip">Chat on WhatsApp</span>
+  </a>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
